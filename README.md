@@ -69,3 +69,14 @@ Run and authenticate the endpoints:
 
 Notification service:
 1. curl -X POST -H "Content-Type: application/json" -d '{"recipient": "recipient@example.com", "subject": "Test Email", "body": "This is a test email."}' http://localhost:5006/notifications/email
+
+## Integration Testing:
+
+### Steps to Test the Microservices:
+
+Run Each Microservice: Ensure that each microservice (User, Product, Order, Payment, Shipping, Notification) is running on its designated port.
+
+Integration Test Scripts: Write scripts that simulate the complete workflow, making HTTP requests to each service and verifying the responses. You can use tools like curl, Postman, or a Python script with the requests library
+
+
+Docker Compose: Use Docker Compose to run all microservices in isolated containers and handle networking between them.
