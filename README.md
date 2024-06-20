@@ -30,7 +30,7 @@ PUT /products/{id}: Update product information.
 
 Run and authenticate the endpoints:
 
-1. curl -X GET http://localhost:5001/products
+1. curl -X GET http://localhost:5000/products
 
 2. curl -X POST -H "Content-Type: application/json" -d '{"id": 1, "name": "Product1", "price": 100}' http://localhost:5000/products
 
@@ -48,7 +48,20 @@ Run and authenticate the endpoints:
 
 1. curl -X POST -H "Content-Type: application/json" -d '{"id": 1, "user_id": 1, "total_amount": 100}' http://localhost:5000/orders
 
-2. curl -X GET http://localhost:5002/orders/1
+2. curl -X GET http://localhost:5000/orders/1
 
+Payment Service
 
+Function: Processes payments, handles transactions, and manages payment methods.
+Endpoints:
 
+POST /payments: Process a payment.
+GET /payments/{id}: Retrieve payment details.
+POST /payments/refund: Process a refund.
+
+Run and authenticate the endpoints:
+1. curl -X POST -H "Content-Type: application/json" -d '{"id": 1, "user_id": 1, "amount": 100, "status": "paid"}' http://localhost:5003/payments
+
+2. curl -X GET http://localhost:5003/payments/1
+
+3. curl -X POST -H "Content-Type: application/json" -d '{"payment_id": 1, "amount": 50}' http://localhost:5003/payments/refund
