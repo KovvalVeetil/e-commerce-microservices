@@ -65,3 +65,7 @@ Run and authenticate the endpoints:
 2. curl -X GET http://localhost:5003/payments/1
 
 3. curl -X POST -H "Content-Type: application/json" -d '{"payment_id": 1, "amount": 50}' http://localhost:5003/payments/refund
+
+
+Notification service:
+1. curl -X POST -H "Content-Type: application/json" -d '{"recipient": "recipient@example.com", "subject": "Test Email", "body": "This is a test email."}' http://localhost:5006/notifications/email
