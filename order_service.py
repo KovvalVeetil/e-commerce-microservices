@@ -24,4 +24,4 @@ def get_user_orders(user_id):
     return jsonify(user_orders), 200
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5002)

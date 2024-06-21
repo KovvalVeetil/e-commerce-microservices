@@ -25,4 +25,4 @@ def update_shipment(shipment_id):
     return jsonify({'message': 'Shipment not found'}), 404
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5004)

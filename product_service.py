@@ -34,4 +34,4 @@ def update_product(product_id):
     return jsonify({'message': 'Product not found'}), 404
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=5001)
