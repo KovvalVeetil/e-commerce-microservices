@@ -1,4 +1,18 @@
-# microservices
+# Microservices
+
+This project is a microservices-based architecture for an e-commerce application. Each microservice is responsible for a specific business function and is implemented using Python and Flask. The services are managed using pm2, which helps in running and monitoring multiple services concurrently.
+
+## Project Overview
+
+This project consists of several microservices for an e-commerce platform:
+
+- User Service: Manages user data, authentication, and authorization.
+- Product Service: Handles the product catalog, including details, pricing, and inventory.
+- Order Service: Manages customer orders, including creation, status updates, and history.
+- Payment Service: Processes payments, transactions, and manages payment methods.
+- Shipping Service: Manages shipping and delivery, including shipment tracking and logistics.
+- Notification Service: Sends notifications to users via email, SMS, or push notifications.
+
 ## User Service
 Function: Manages user data, authentication, and authorization.
 Endpoints:
@@ -96,4 +110,56 @@ pm2 list
 
 3. Run the entire collection
 
+- Using pm2
+
+```bash
+
+cd workspace/microservice/microservice
+Create the ecosystem.config.js File
+
+Make sure this file is in the root directory of your project (workspace/microservice/microservice). Here’s an example configuration:
+
+javascript
+Copy code
+module.exports = {
+  apps: [
+    {
+      name: 'user-service',
+      script: 'user_service.py',
+      interpreter: 'python'
+    },
+    {
+      name: 'product-service',
+      script: 'product_service.py',
+      interpreter: 'python'
+    },
+    {
+      name: 'order-service',
+      script: 'order_service.py',
+      interpreter: 'python'
+    },
+    {
+      name: 'payment-service',
+      script: 'payment_service.py',
+      interpreter: 'python'
+    },
+    {
+      name: 'shipping-service',
+      script: 'shipping_service.py',
+      interpreter: 'python'
+    },
+    {
+      name: 'notification-service',
+      script: 'notification_service.py',
+      interpreter: 'python'
+    }
+  ]
+};
+Start All Microservices with pm2:
+
+pm2 start ecosystem.config.js
+Verify Services Are Running:
+
+pm2 list
+```
 
